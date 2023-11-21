@@ -12,6 +12,7 @@ import { z } from "zod";
 import ErrorMessage from "@/app/components/ErrorMessage";
 import Spinner from "@/app/components/Spinner";
 
+// Lazy loading SimpleMDE, similar to disabling SSR
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
   ssr: false,
 });
