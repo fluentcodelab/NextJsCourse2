@@ -4,18 +4,13 @@ import axios from "axios";
 import { z } from "zod";
 import { Button, Callout, TextField } from "@radix-ui/themes";
 import { useForm, Controller } from "react-hook-form";
-import dynamic from "next/dynamic";
 import "easymde/dist/easymde.min.css";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { issueSchema } from "@/app/validationSchemas";
 import { ErrorMessage, Spinner } from "@/app/components";
 import { Issue } from "@prisma/client";
-
-// Lazy loading SimpleMDE, similar to disabling SSR
-const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
-  ssr: false,
-});
+import SimpleMDE from "react-simplemde-editor";
 
 type IssueFormData = z.infer<typeof issueSchema>;
 
