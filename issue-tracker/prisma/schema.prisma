@@ -8,7 +8,7 @@ generator client {
 datasource db {
   provider     = "mysql"
   url          = env("DATABASE_URL")
-  relationMode = "prisma" // Disables foreign keys, because PlanetScale doesn't allow foreign keys
+  relationMode = "prisma"
 }
 
 model Issue {
